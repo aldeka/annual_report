@@ -14,15 +14,16 @@ body, #bg-wrapper, #slide-wrapper {
 
 #bg-wrapper {
   z-index: 0;
-  position: fixed;
-  top: 0;
+  position: relative;
 }
 
 #bg-wrapper img {
-  -webkit-transition: opacity 2s ease-in-out;
-  -moz-transition: opacity 2s ease-in-out;
-  -o-transition: opacity 2s ease-in-out;
-  transition: opacity 2s ease-in-out;
+  position: fixed;
+  top: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
   opacity:0;
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
