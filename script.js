@@ -1,7 +1,4 @@
 slidesToImagesMapper = {'1': '1', '2':'2', '3':'2', '4': '4'};
-//currentSlide = 1;
-//scrollListener = true;
-//slides = $('.slide');
 
 $(document).ready(function(){
     generateImageDivs();
@@ -39,17 +36,14 @@ window.onscroll = function(event){
     var docViewBottom = docViewTop + $(window).height();
     //console.log(docViewTop + ' ' + docViewBottom);
 
-    $.each(slides, function(index, slide){
+    $.each($('.slide'), function(index, slide){
       var elemTop = $(slide).offset().top;
       var elemBottom = elemTop +$(slide).height();
       var elemNum = slidesToImagesMapper[$(slide).attr('id').slice(5)];
-      //if (parseInt(elemNum, 10) != currentSlide) {
-        if (parseInt(docViewBottom, 10) + 20 > parseInt(elemTop, 10)) {
-          $('#bg-wrapper .opaque').removeClass('opaque');
-          //console.log('#bg' + parseInt(elemNum, 10));
-          $('#bg' + parseInt(elemNum, 10)).addClass('opaque');
-          //currentSlide = parseInt(elemNum, 10);
-        }
-      //}
+      if (parseInt(docViewBottom, 10) + 20 > parseInt(elemTop, 10)) {
+        $('#bg-wrapper .opaque').removeClass('opaque');
+        console.log('#bg' + parseInt(elemNum, 10));
+        $('#bg' + parseInt(elemNum, 10)).addClass('opaque');
+      }
     });
 };
